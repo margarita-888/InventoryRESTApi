@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductsRESTApi</name>
+    </assembly>
+    <members>
+        <member name="T:ProductsRESTApi.Controllers.ProductsController">
+            <summary>Products Controller Class that allows to API calls.</summary>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.GetProducts(System.String)">
+            <summary>
+            Retrieve either a list of all products or products with a particular name when the name is provided in the query string
+            </summary>
+            <param name="name">Product name</param>
+            <returns>List of products</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+            GET: api/Products
+            GET: api/products?name={name}
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.GetProductById(System.Guid)">
+            <summary>Gets the product by identifier.</summary>
+            <param name="id">The identifier.</param>
+            <returns>The product.</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+            GET: api/Products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.UpdateProduct(System.Guid,ProductsRESTApi.Models.ProductRequest)">
+            <summary>Updates the product.</summary>
+            <param name="id">The identifier.</param>
+            <param name="product">The product to be updated.</param>
+            <returns>Status code</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+            PUT: api/Products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.CreateProduct(ProductsRESTApi.Models.ProductRequest)">
+            <summary>Creates the product.</summary>
+            <param name="productRequest">The product request.</param>
+            <returns>Created product.</returns>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.DeleteProduct(System.Guid)">
+            DELETE: api/Products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91
+            <summary>Deletes the product.</summary>
+            <param name="id">The identifier.</param>
+            <returns>Status code</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.GetProductOptions(System.Guid)">
+            GET: api/products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91/options
+            <summary>Gets the product options.</summary>
+            <param name="id">The identifier.</param>
+            <returns>Product options</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.GetProductOption(System.Guid,System.Guid)">
+            GET: api/products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91/options/ff3bfa42-ea12-46a3-9bae-9c13ae550610
+            <summary>Gets the product option by product and option identifiers.</summary>
+            <param name="id">The product identifier.</param>
+            <param name="optionId">The option identifier.</param>
+            <returns>Product option.</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.UpdateProductOption(System.Guid,System.Guid,ProductsRESTApi.Models.ProductOptionRequest)">
+            PUT: api/products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91/options/ff3bfa42-ea12-46a3-9bae-9c13ae550610
+            <summary>Updates the product option.</summary>
+            <param name="id">The product identifier.</param>
+            <param name="optionId">The option identifier.</param>
+            <param name="productOption">The product option.</param>
+            <returns>Status code</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.CreateProductOption(System.Guid,ProductsRESTApi.Models.ProductOptionRequest)">
+            POST: api/products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91/options
+            <summary>Creates the product option.</summary>
+            <param name="id">The product identifier.</param>
+            <param name="productOption">The product option.</param>
+            <returns>Created product option</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.DeleteProductOption(System.Guid,System.Guid)">
+            DELETE: api/products/07f98a2c-72b6-40af-b50d-d3cc1bc96f91/options/ff3bfa42-ea12-46a3-9bae-9c13ae550610
+            <summary>Deletes the product option.</summary>
+            <param name="id">The identifier.</param>
+            <param name="optionId">The option identifier.</param>
+            <returns>Status code</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+    </members>
+</doc>

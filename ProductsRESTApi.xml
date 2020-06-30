@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductsRESTApi</name>
+    </assembly>
+    <members>
+        <member name="T:ProductsRESTApi.Controllers.ProductsController">
+            <summary></summary>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.GetProducts(System.String)">
+            <summary>
+            Retrieve either a list of all products or products with a particular name when the name is provided in the query string
+            </summary>
+            <param name="name">Product name</param>
+            <returns>
+            List of products
+            </returns>
+        </member>
+        <member name="M:ProductsRESTApi.Controllers.ProductsController.UpdateProduct(System.Guid,ProductsRESTApi.Models.ProductDTO)">
+            <summary>Updates the product.</summary>
+            <param name="id">The identifier.</param>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
