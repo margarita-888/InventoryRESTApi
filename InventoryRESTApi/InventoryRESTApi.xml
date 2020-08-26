@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InventoryRESTApi</name>
+    </assembly>
+    <members>
+        <member name="T:InventoryRESTApi.Controllers.InventoryController">
+            <summary>Inventory Controller Class that allows to API calls.</summary>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItems(System.String)">
+            <summary>
+            Retrieve either a list of all inventory items or inventory items with a name provided in the query string
+            </summary>
+            <param name="name">Name of inventory item</param>
+            <returns>List of inventory items </returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetTop3Products">
+            <summary>
+            Based on item price, retrieve top 3 inventory items in descending order with the highest price at the top
+            </summary>
+            <returns>List of inventory items </returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItemById(System.Guid)">
+            <summary>Retrieve inventory item by its id.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <returns>Inventory item.</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItemsWithOptionByName(System.String)">
+            <summary>
+            Retrieve a list of inventory items that have option/s with a name provided in the query string
+            </summary>
+            <param name="name">Name of inventory item</param>
+            <returns>List of inventory items </returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.UpdateInventoryItem(System.Guid,InventoryRESTApi.Models.InventoryItemRequest)">
+            <summary>Updates inventory item.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <param name="InventoryItem">Inventory item to be updated.</param>
+            <returns>Status code</returns>
+            <response code="204">No Content success</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.CreateInventoryItem(InventoryRESTApi.Models.InventoryItemRequest)">
+            <summary>Creates a new inventory item.</summary>
+            <param name="InventoryItemRequest">Inventory item to be created.</param>
+            <returns>Created Inventory item.</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.DeleteInventoryItem(System.Guid)">
+            <summary>Delete Inventory item by identifier.</summary>
+            <param name="id">The identifier.</param>
+            <returns>Status code</returns>
+            <response code="204">No Content success</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItemOptions(System.Guid)">
+            <summary>Retrieve options of a particular inventory item by its identifier.</summary>
+            <param name="id">The identifier.</param>
+            <returns>Options of inventory item </returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItemOption(System.Guid,System.Guid)">
+            <summary>Retrieve an option of an inventory item by item's and option's identifiers.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <param name="optionId">Inventory item option identifier.</param>
+            <returns>Inventory item option.</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.UpdateInventoryItemOption(System.Guid,System.Guid,InventoryRESTApi.Models.InventoryItemOptionRequest)">
+            <summary>Update inventory item option.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <param name="optionId">Inventory item option identifier.</param>
+            <param name="InventoryItemOption">Inventory item option.</param>
+            <returns>Status code</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.CreateInventoryItemOption(System.Guid,InventoryRESTApi.Models.InventoryItemOptionRequest)">
+            <summary>Create inventory item option.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <param name="InventoryItemOption">Inventory item option to be created.</param>
+            <returns>Inventory item option that has been created</returns>
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:InventoryRESTApi.Controllers.InventoryController.DeleteInventoryItemOption(System.Guid,System.Guid)">
+            <summary>Delete inventory item option.</summary>
+            <param name="id">Inventory item identifier.</param>
+            <param name="optionId">Inventory item option identifier.</param>
+            <returns>Status code</returns>
+            <response code="204">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+        </member>
+    </members>
+</doc>

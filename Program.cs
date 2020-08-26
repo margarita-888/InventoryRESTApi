@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ProductsRESTApi.Data;
+using InventoryRESTApi.Data;
 using System;
 
-namespace ProductsRESTApi
+namespace InventoryRESTApi
 {
     public class Program
     {
@@ -26,7 +26,7 @@ namespace ProductsRESTApi
 
                 try
                 {
-                    var context = services.GetRequiredService<ProductsContext>();
+                    var context = services.GetRequiredService<InventoryContext>();
                     //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }

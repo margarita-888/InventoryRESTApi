@@ -4,18 +4,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ProductsRESTApi.Migrations
+namespace InventoryRESTApi.Migrations
 {
-    [DbContext(typeof(ProductsContext))]
-    partial class ProductsContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(InventoryContext))]
+    partial class InventoryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5");
+                .HasAnnotation("InventoryItemVersion", "3.1.5");
 
-            modelBuilder.Entity("ProductsRESTApi.Models.Product", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -25,50 +25,50 @@ namespace ProductsRESTApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(35)")
-                        .HasMaxLength(35);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(17)")
-                        .HasMaxLength(17);
+                        .HasColumnType("nvarchar(35)")
+                        .HasMaxLength(35);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("InventoryItem");
                 });
 
-            modelBuilder.Entity("ProductsRESTApi.Models.ProductOption", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItemOption", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(23)")
-                        .HasMaxLength(23);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(9)")
-                        .HasMaxLength(9);
+                        .HasColumnType("nvarchar(35)")
+                        .HasMaxLength(35);
 
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("InventoryItemId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("InventoryItemId");
 
-                    b.ToTable("ProductOption");
+                    b.ToTable("InventoryItemOption");
                 });
 
-            modelBuilder.Entity("ProductsRESTApi.Models.ProductOption", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItemOption", b =>
                 {
-                    b.HasOne("ProductsRESTApi.Models.Product", "Product")
-                        .WithMany("ProductOptions")
-                        .HasForeignKey("ProductId")
+                    b.HasOne("InventoryRESTApi.Models.InventoryItem", "InventoryItem")
+                        .WithMany("InventoryItemOptions")
+                        .HasForeignKey("InventoryItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

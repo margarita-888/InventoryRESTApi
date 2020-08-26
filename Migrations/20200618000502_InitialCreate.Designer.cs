@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ProductsRESTApi.Migrations
+namespace InventoryRESTApi.Migrations
 {
-    [DbContext(typeof(ProductsContext))]
+    [DbContext(typeof(InventoryContext))]
     [Migration("20200618000502_InitialCreate")]
     partial class InitialCreate
     {
@@ -15,9 +15,9 @@ namespace ProductsRESTApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5");
+                .HasAnnotation("InventoryItemVersion", "3.1.5");
 
-            modelBuilder.Entity("ProductsRESTApi.Models.Product", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,10 +39,10 @@ namespace ProductsRESTApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("InventoryItem");
                 });
 
-            modelBuilder.Entity("ProductsRESTApi.Models.ProductOption", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItemOption", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,21 +56,21 @@ namespace ProductsRESTApi.Migrations
                         .HasColumnType("nvarchar(9)")
                         .HasMaxLength(9);
 
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("InventoryItemId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("InventoryItemId");
 
-                    b.ToTable("ProductOption");
+                    b.ToTable("InventoryItemOption");
                 });
 
-            modelBuilder.Entity("ProductsRESTApi.Models.ProductOption", b =>
+            modelBuilder.Entity("InventoryRESTApi.Models.InventoryItemOption", b =>
                 {
-                    b.HasOne("ProductsRESTApi.Models.Product", "Product")
-                        .WithMany("ProductOptions")
-                        .HasForeignKey("ProductId")
+                    b.HasOne("InventoryRESTApi.Models.InventoryItem", "InventoryItem")
+                        .WithMany("InventoryItemOptions")
+                        .HasForeignKey("InventoryItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

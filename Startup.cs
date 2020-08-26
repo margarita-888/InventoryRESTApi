@@ -5,12 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using ProductsRESTApi.Data;
-using ProductsRESTApi.Interfaces;
+using InventoryRESTApi.Data;
+using InventoryRESTApi.Interfaces;
 using System;
 using System.Reflection;
 
-namespace ProductsRESTApi
+namespace InventoryRESTApi
 {
     public class Startup
     {
@@ -26,18 +26,18 @@ namespace ProductsRESTApi
         {
             services.AddControllers();
 
-            //services.AddDbContext<ProductsContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("ProductsContext")));
+            //services.AddDbContext<InventoryContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("InventoryContext")));
 
-            services.AddDbContext<ProductsContext>(options =>
+            services.AddDbContext<InventoryContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IProductsService, ProductsService>();
+            services.AddScoped<IInventoryService, InventoryService>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Products API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inventory API", Version = "v1" });
 
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml");
@@ -60,7 +60,7 @@ namespace ProductsRESTApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventory API V1");
             });
 
             app.UseRouting();

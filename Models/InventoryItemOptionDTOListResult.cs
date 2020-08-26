@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ProductsRESTApi.Models
+namespace InventoryRESTApi.Models
 {
-    public class ProductOptionDTOListResult
+    public class InventoryItemOptionDTOListResult
     {
         [JsonPropertyName("items")]
-        public List<ProductOptionDTO> Items { get; set; }
+        public List<InventoryItemOptionDTO> Items { get; set; }
     }
 }

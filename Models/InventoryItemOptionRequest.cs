@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ProductsRESTApi.Models
+namespace InventoryRESTApi.Models
 {
-    public class ProductOptionRequest
+    public class InventoryItemOptionRequest
     {
         [JsonPropertyName("name")]
         [Required]
-        [StringLength(9)]
+        [StringLength(35)]
         public string Name { get; set; }
 
         [JsonPropertyName("description")]
         [Required]
-        [StringLength(23)]
+        [StringLength(100)]
         public string Description { get; set; }
     }
 }

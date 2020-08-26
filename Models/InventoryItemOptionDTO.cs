@@ -5,25 +5,25 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ProductsRESTApi.Models
+namespace InventoryRESTApi.Models
 {
-    public class ProductOptionDTO
+    public class InventoryItemOptionDTO
     {
         [JsonPropertyName("id")]
         public Guid Id { get; set; }
 
-        [JsonPropertyName("productid")]
+        [JsonPropertyName("InventoryItemid")]
         [Required]
-        public Guid ProductId { get; set; }
+        public Guid InventoryItemId { get; set; }
 
         [JsonPropertyName("name")]
         [Required]
-        [StringLength(9)]
+        [StringLength(35)]
         public string Name { get; set; }
 
         [JsonPropertyName("description")]
         [Required]
-        [StringLength(23)]
+        [StringLength(100)]
         public string Description { get; set; }
     }
 }

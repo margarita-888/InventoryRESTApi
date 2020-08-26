@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ProductsRESTApi.Migrations
+namespace InventoryRESTApi.Migrations
 {
     public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "InventoryItem",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -19,42 +19,42 @@ namespace ProductsRESTApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.Id);
+                    table.PrimaryKey("PK_InventoryItem", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductOption",
+                name: "InventoryItemOption",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    ProductId = table.Column<Guid>(nullable: false),
+                    InventoryItemId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: true),
                     Description = table.Column<string>(type: "nvarchar(23)", maxLength: 23, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductOption", x => x.Id);
+                    table.PrimaryKey("PK_InventoryItemOption", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductOption_Product_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Product",
+                        name: "FK_InventoryItemOption_InventoryItem_InventoryItemId",
+                        column: x => x.InventoryItemId,
+                        principalTable: "InventoryItem",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductOption_ProductId",
-                table: "ProductOption",
-                column: "ProductId");
+                name: "IX_InventoryItemOption_InventoryItemId",
+                table: "InventoryItemOption",
+                column: "InventoryItemId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductOption");
+                name: "InventoryItemOption");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "InventoryItem");
         }
     }
 }
