@@ -24,7 +24,7 @@ namespace InventoryRESTApi.Controllers
         }
 
         /// <summary>
-        /// Retrieve either a list of all inventory items or inventory items with a name provided in the query string
+        /// Retrieve either a list of all inventory items or inventory items with a name 'like' the one provided in the query string
         /// </summary>
         /// <param name="name">Name of inventory item</param>
         /// <returns>List of inventory items </returns>

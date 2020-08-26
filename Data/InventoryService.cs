@@ -34,7 +34,7 @@ namespace InventoryRESTApi.Data
                 }
                 else
                 {
-                    result.Items = await _context.InventoryItem.Where(p => p.Name == name.ToLower()).Select(p => InventoryItemToDTO(p)).ToListAsync();
+                    result.Items = await _context.InventoryItem.Where(p => p.Name.ToLower().Contains(name.ToLower())).Select(p => InventoryItemToDTO(p)).ToListAsync();
                     _logger.LogInformation($"InventoryService::GetInventory. Found {result.Items.Count()} Inventory with name {name}.");
                 }
             }

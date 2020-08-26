@@ -9,7 +9,7 @@
         </member>
         <member name="M:InventoryRESTApi.Controllers.InventoryController.GetInventoryItems(System.String)">
             <summary>
-            Retrieve either a list of all inventory items or inventory items with a name provided in the query string
+            Retrieve either a list of all inventory items or inventory items with a name 'like' the one provided in the query string
             </summary>
             <param name="name">Name of inventory item</param>
             <returns>List of inventory items </returns>
@@ -23,6 +23,7 @@
             </summary>
             <returns>List of inventory items </returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -31,6 +32,7 @@
             <param name="id">Inventory item identifier.</param>
             <returns>Inventory item.</returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -41,6 +43,7 @@
             <param name="name">Name of inventory item</param>
             <returns>List of inventory items </returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -58,6 +61,7 @@
             <param name="InventoryItemRequest">Inventory item to be created.</param>
             <returns>Created Inventory item.</returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -74,6 +78,7 @@
             <param name="id">The identifier.</param>
             <returns>Options of inventory item </returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -83,6 +88,7 @@
             <param name="optionId">Inventory item option identifier.</param>
             <returns>Inventory item option.</returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -93,6 +99,7 @@
             <param name="InventoryItemOption">Inventory item option.</param>
             <returns>Status code</returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>
@@ -102,6 +109,7 @@
             <param name="InventoryItemOption">Inventory item option to be created.</param>
             <returns>Inventory item option that has been created</returns>
             <response code="200">Ok</response>
+            <response code="204">No Content success</response>
             <response code="400">Bad Request</response>
             <response code="404">Not Found</response>
         </member>

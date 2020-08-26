@@ -11,8 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="InventoryItemRESTApi\**" />
+    <Content Remove="InventoryItemRESTApi\**" />
+    <EmbeddedResource Remove="InventoryItemRESTApi\**" />
+    <None Remove="InventoryItemRESTApi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />
     <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="InventoryItemRESTApi.xml" />
   </ItemGroup>
 
   <ItemGroup>
