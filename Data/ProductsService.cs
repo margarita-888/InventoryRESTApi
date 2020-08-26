@@ -30,12 +30,12 @@ namespace ProductsRESTApi.Data
                 if (string.IsNullOrEmpty(name))
                 {
                     result.Items = await _context.Products.Select(p => ProductToDTO(p)).ToListAsync();
-                    _logger.LogInformation($"ProductsService::GetProducts. Found {result.Items.Count().ToString()} products.");
+                    _logger.LogInformation($"ProductsService::GetProducts. Found {result.Items.Count()} products.");
                 }
                 else
                 {
                     result.Items = await _context.Products.Where(p => p.Name == name).Select(p => ProductToDTO(p)).ToListAsync();
-                    _logger.LogInformation($"ProductsService::GetProducts. Found {result.Items.Count().ToString()} products with name {name}.");
+                    _logger.LogInformation($"ProductsService::GetProducts. Found {result.Items.Count()} products with name {name}.");
                 }
             }
             catch (Exception ex)
@@ -230,7 +230,7 @@ namespace ProductsRESTApi.Data
 
             try
             {
-                productOption = _context.ProductOptions.Where(po => po.Id == optionId && po.ProductId == id).Select(po => ProductOptionToDTO(po)).FirstOrDefault();
+                productOption = await _context.ProductOptions.Where(po => po.Id == optionId && po.ProductId == id).Select(po => ProductOptionToDTO(po)).FirstOrDefaultAsync();
                 if (productOption == null)
                 {
                     return new NotFoundObjectResult($"product option with id {optionId} was not found");

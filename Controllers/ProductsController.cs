@@ -15,12 +15,10 @@ namespace ProductsRESTApi.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductsContext _context;
         private readonly IProductsService _productsService;
 
-        public ProductsController(ProductsContext context, IProductsService productService)
+        public ProductsController(IProductsService productService)
         {
-            _context = context;
             _productsService = productService;
         }
 
@@ -81,7 +79,7 @@ namespace ProductsRESTApi.Controllers
             return await _productsService.UpdateProduct(id, product);
         }
 
-        /// POST: api/Products
+        // POST: api/Products
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         /// <summary>Creates the product.</summary>
