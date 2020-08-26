@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using InventoryRESTApi.Models;
+using System;
 
 public class InventoryContext : DbContext
 {
@@ -13,10 +14,13 @@ public class InventoryContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<InventoryItem>()
+            .HasKey(i => i.Id);
+
         modelBuilder.Entity<InventoryItemOption>()
-           .ToTable("InventoryItemOption")
-       .HasOne(po => po.InventoryItem)
-       .WithMany(p => p.InventoryItemOptions)
-       .OnDelete(DeleteBehavior.Cascade);
+            .ToTable("InventoryItemOption")
+            .HasOne(o => o.InventoryItem)
+            .WithMany(i => i.InventoryItemOptions)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

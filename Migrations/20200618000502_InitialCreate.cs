@@ -12,8 +12,8 @@ namespace InventoryRESTApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(17)", maxLength: 17, nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     DeliveryPrice = table.Column<decimal>(nullable: false)
                 },
@@ -28,8 +28,8 @@ namespace InventoryRESTApi.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     InventoryItemId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(23)", maxLength: 23, nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {

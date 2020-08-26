@@ -27,12 +27,12 @@ namespace InventoryRESTApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(35)")
-                        .HasMaxLength(35);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(17)")
-                        .HasMaxLength(17);
+                        .HasColumnType("nvarchar(35)")
+                        .HasMaxLength(35);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
@@ -49,12 +49,12 @@ namespace InventoryRESTApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(23)")
-                        .HasMaxLength(23);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(9)")
-                        .HasMaxLength(9);
+                        .HasColumnType("nvarchar(35)")
+                        .HasMaxLength(35);
 
                     b.Property<Guid>("InventoryItemId")
                         .HasColumnType("TEXT");
