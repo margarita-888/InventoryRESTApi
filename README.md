@@ -6,4 +6,5 @@
 - .NET Core
 - EF
 - SQLite
+- REST API
 - Swagger
