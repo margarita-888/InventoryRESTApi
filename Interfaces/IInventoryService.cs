@@ -8,28 +8,28 @@ namespace InventoryRESTApi.Interfaces
 {
     public interface IInventoryService
     {
-        public Task<ActionResult<InventoryItemDTOListResult>> GetInventoryItems(string name = "");
+        Task<ActionResult<InventoryItemDTOListResult>> GetInventoryItems(string name = "");
 
-        public Task<ActionResult<InventoryItemDTOListResult>> GetTop3InventoryItems();
+        Task<ActionResult<InventoryItemDTOListResult>> GetTop3InventoryItems();
 
-        public Task<ActionResult<InventoryItemDTOListResult>> GetInventoryItemsWithOptionByName(string name);
+        Task<ActionResult<InventoryItemDTOListResult>> GetInventoryItemsWithOptionByName(string name);
 
-        public Task<ActionResult<InventoryItemDTO>> GetInventoryItemById(Guid id);
+        Task<ActionResult<InventoryItemDTO>> GetInventoryItemById(Guid id);
 
-        public Task<IActionResult> UpdateInventoryItem(Guid id, InventoryItemRequest InventoryItemRequest);
+        Task<IActionResult> UpdateInventoryItem(Guid id, InventoryItemRequest InventoryItemRequest);
 
-        public Task<ActionResult<InventoryItemDTO>> CreateInventoryItem(InventoryItemRequest InventoryItemCreate);
+        Task<ActionResult<InventoryItemDTO>> CreateInventoryItem(InventoryItemRequest InventoryItemCreate);
 
-        public Task<ActionResult> DeleteInventoryItem(Guid id);
+        Task<ActionResult> DeleteInventoryItem(Guid id);
 
-        public Task<ActionResult<InventoryItemOptionDTOListResult>> GetInventoryItemOptions(Guid id);
+        Task<ActionResult<InventoryItemOptionDTOListResult>> GetInventoryItemOptions(Guid id);
 
-        public Task<ActionResult<InventoryItemOptionDTO>> GetInventoryItemOption(Guid id, Guid optionId);
+        Task<ActionResult<InventoryItemOptionDTO>> GetInventoryItemOption(Guid id, Guid optionId);
 
-        public Task<IActionResult> UpdateInventoryItemOption(Guid id, Guid optionId, InventoryItemOptionRequest InventoryItemOptionRequest);
+        Task<IActionResult> UpdateInventoryItemOption(Guid id, Guid optionId, InventoryItemOptionRequest InventoryItemOptionRequest);
 
-        public Task<ActionResult<InventoryItemOptionDTO>> CreateInventoryItemOption(Guid id, InventoryItemOptionRequest InventoryItemOptionRequest);
+        Task<ActionResult<InventoryItemOptionDTO>> CreateInventoryItemOption(Guid id, InventoryItemOptionRequest InventoryItemOptionRequest);
 
-        public Task<IActionResult> DeleteInventoryItemOption(Guid id, Guid optionId);
+        Task<IActionResult> DeleteInventoryItemOption(Guid id, Guid optionId);
     }
 }
